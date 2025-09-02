@@ -29,3 +29,16 @@ Sea ![y_t](https://latex.codecogs.com/png.latex?y_t) la serie temporal a predeci
 5. **Intervalos de predicción (aproximación 95%):**
 
    ![\hat{y}_t^{\text{hybrid}} \pm 2 \sqrt{\operatorname{Var}(\hat{z}_t)}](https://latex.codecogs.com/png.latex?%5Chat%7By%7D_t%5E%7B%5Ctext%7Bhybrid%7D%7D%20%5Cpm%202%20%5Csqrt%7B%5Coperatorname%7BVar%7D%28%5Chat%7Bz%7D_t%29%7D)
+
+
+**Características del algoritmo**
+
+	•	Capacidad de capturar tendencia y fluctuaciones locales: CatBoost modela la tendencia principal; Kalman filtra las variaciones correlacionadas en el tiempo.
+	•	Detección de picos y caídas: Kalman suaviza el ruido, pero conserva estructuras inesperadas parcialmente determinísticas.
+	•	Estimación de incertidumbre: los intervalos ±2σ permiten cuantificar confianza en la predicción.
+	•	Flexible y escalable: puede integrarse en pipelines de datos temporales, con múltiples features y targets.
+**Aplicaciones potenciales**
+
+	•	Series económicas con ciclos y shocks locales.
+	•	Señales fisiológicas o sensoriales con ruido estructural.
+	•	Predicciones en producción industrial o acuícola donde hay patrones periódicos y eventos puntuales.
